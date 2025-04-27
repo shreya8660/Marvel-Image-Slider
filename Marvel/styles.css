@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(135deg,#710606, #2a0404, #000000, #000000, #2a0404,#710606);
+  }
+  
+  .slider-container {
+    width: 100%;
+    max-width: 900px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .slider {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+  }
+  
+  .slide-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .marvel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .marvel-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 15px;
+    color: white;
+    z-index: 2;
+  }
+  
+  .marvel-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1;
+  }
+  
+  .marvel-name {
+    font-size: 1.8rem;
+    font-weight: normal;
+  }
+  
+  .brand {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: white;
+    text-align: center;
+  }
+  
+  .keyframe {
+    font-weight: lighter;
+    color: #76bdfe;
+  }
+  
+  .effects {
+    font-weight: bold;
+  }
+  
+  /* Slide specific background gradients - similar to the image */
+  #slide-1 {
+    background: linear-gradient(to bottom, rgba(255,255,220,0.2), rgba(240,220,50,0.5));
+  }
+  
+  #slide-2 {
+    background: linear-gradient(to bottom, rgba(255,220,255,0.2), rgba(230,150,230,0.5));
+  }
+  
+  #slide-3 {
+    background: linear-gradient(to bottom, rgba(220,240,255,0.2), rgba(100,180,240,0.5));
+  }
+  
+  #slide-4 {
+    background: linear-gradient(to bottom, rgba(255,230,220,0.2), rgba(240,120,50,0.5));
+  }
+  
+  #slide-5 {
+    background: linear-gradient(to bottom, rgba(220,255,220,0.2), rgba(120,220,120,0.5));
+  }
+  
+  /* Add fade transition effect */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .slide.active {
+    animation: fadeIn 0.5s forwards;
+  }
